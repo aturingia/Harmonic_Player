@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <link rel="shorcut icon" size="16x16 24x24 32x32 48x48" href="favicon.ico" type="image/x-icon">
+    <title>Harmonic Player - Mezcla Armónica Camelot (±5 incluido)</title>
+</head>
+<body>
+	<div class="app-container" id="appContainer">
+    <div class="player-wrapper">
+        <div class="bg-settings">
+            <input type="text" id="bgUrlInput" class="bg-url-input" placeholder="URL de imagen de fondo">
+            <button id="applyBgBtn" class="sec-btn">🎨 Aplicar fondo</button>
+            <button id="uploadLocalBgBtn" class="sec-btn">📁 Imagen local</button>
+            <input type="file" id="localBgInput" accept="image/*" style="display:none">
+        </div>
+
+        <div class="main-layout">
+            <div class="playlist-section">
+                <div class="playlist-header">
+                    <h3>🎵 Playlist · Mezcla Armónica</h3>
+                    <div class="playlist-actions">
+                        <button id="sortCamelotBtn" class="sec-btn">🔄 Ordenar Playlist</button>
+                        <button id="clearPlaylistBtn" class="sec-btn">🗑️ Limpiar Playlist</button>
+                        <label class="upload-btn" for="fileInput">➕ Cargar Audio</label>
+                        <input type="file" id="fileInput" multiple accept=".mp3,.wav,.ogg">
+                    </div>
+                </div>
+                <div class="filter-buttons" id="filterButtons">
+                    <span class="filter-chip active" data-filter="all">📋 Todas</span>
+                    <span class="filter-chip" data-filter="compatible">🎵 Compatibles</span>
+                </div>
+                <div id="playlistContainer" class="playlist-items">
+                    <div style="color:rgba(255,255,255,0.6); text-align:center; padding:2rem;">
+                        🎵 Carga archivos de audio<br>
+                        <span style="font-size:0.8rem;">Los nombres deben incluir la tonalidad (ej: "Canción 8A.mp3")</span>
+                    </div>
+                </div>
+                <div class="info-text">
+                    <div class="legend">
+                        <div class="legend-item"><div class="legend-color" style="background:#4caf50;"></div><span>Perfecta/Relativa</span></div>
+                        <div class="legend-item"><div class="legend-color" style="background:#2196f3;"></div><span>±1 (Energía)</span></div>
+                        <div class="legend-item"><div class="legend-color" style="background:#ff9800;"></div><span>±2 (Tonal)</span></div>
+                        <div class="legend-item"><div class="legend-color" style="background:#9c27b0;"></div><span>±5 (Avanzado)</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="player-section">
+                <div class="cover-art" id="coverArt">
+                    <div class="cover-placeholder">🎧</div>
+                </div>
+                <div class="song-info">
+                    <div class="song-title" id="currentTitle">Sin canción</div>
+                    <div class="song-key" id="currentKey">-</div>
+                </div>
+                <div class="progress-container" id="progressContainer">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+                <div class="time-info">
+                    <span id="currentTime">0:00</span>
+                    <span id="duration">0:00</span>
+                </div>
+                <div class="controls">
+                    <button class="ctrl-btn" id="prevBtn">⏮️</button>
+                    <button class="ctrl-btn" id="playPauseBtn">▶️</button>
+                    <button class="ctrl-btn" id="nextBtn">⏭️</button>
+                </div>
+                <div class="volume-row">
+                    <span class="volume-icon">🔊</span>
+                    <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.8">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="status-badge" id="statusBadge">💾 Listo</div>
+</body>
+</html>
