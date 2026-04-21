@@ -42,7 +42,7 @@ body::after {
     z-index: -1;
 }
 
-#controles {
+.bx {
     font-size: 48px;
 }
 
